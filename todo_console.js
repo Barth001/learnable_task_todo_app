@@ -1,7 +1,14 @@
-function entrance(){}
+class TodoConsoleApp {
 
-function addItem(){}
+    constructor(){
+        
+    }
 
-function updateItem(){}
-
-function deleteItem(){}
+    entrance(){}
+    
+    addItem(){}
+    
+    updateItem(){}
+    
+    deleteItem(){}
+}
