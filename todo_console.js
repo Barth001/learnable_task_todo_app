@@ -1,8 +1,9 @@
 const prompt = require("prompt-sync")({ sigint: true });
+
 class TodoConsoleApp {
 
     constructor(){
-        this.dataBase = []
+        this.dataBase = [1,2,3]
     }
 
     currentDate(){
@@ -22,17 +23,28 @@ class TodoConsoleApp {
     
     updateItem(){}
     
-    deleteItem(){}
+    deleteItem(index){
+        var len = this.dataBase.length - 1;
+        if (len == 0){
+            console.log("You have no activity");
+            return
+        } else if (len < index || index < 0){
+            console.log("Wrong index");
+        } else{
+            this.dataBase.splice(index, 1);
+            this.display()
+        }
+    }
 
     display(){
+        console.log(this.currentDate());
+        console.log("--------------------");
         this.dataBase.forEach((element,index) => {
-            console.log("--------------------");
-            console.log(this.currentDate());
-            console.log("--------------------");
             console.log(`| ${index} | ${element} |`);
         });
+        console.log("--------------------");
     }
 }
 
 todo = new TodoConsoleApp();
-todo.addItem()
+todo.deleteItem(1)
