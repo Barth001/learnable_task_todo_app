@@ -21,7 +21,21 @@ class TodoConsoleApp {
         this.display()
     }
     
-    updateItem(){}
+    updateItem(index){
+        var len = this.dataBase.length - 1;
+        if (len == 0){
+            console.log("You have no activity");
+            return
+        } else if (len < index || index < 0){
+            console.log("Wrong index");
+            return
+        } else {
+            console.log(this.dataBase[index]);
+            let input = prompt("Update to..: ")
+            this.dataBase[index] = input
+            this.display()
+        }
+    }
     
     deleteItem(index){
         var len = this.dataBase.length - 1;
@@ -40,11 +54,11 @@ class TodoConsoleApp {
         console.log(this.currentDate());
         console.log("--------------------");
         this.dataBase.forEach((element,index) => {
-            console.log(`| ${index} | ${element} |`);
+            console.log(`| ${index} | ${element}`);
         });
         console.log("--------------------");
     }
 }
 
 todo = new TodoConsoleApp();
-todo.deleteItem(1)
+todo.updateItem(1)
