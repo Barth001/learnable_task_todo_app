@@ -26,7 +26,9 @@ class TodoConsoleApp {
 
     display(){
         this.dataBase.forEach((element,index) => {
+            console.log("--------------------");
             console.log(this.currentDate());
+            console.log("--------------------");
             console.log(`| ${index} | ${element} |`);
         });
     }
