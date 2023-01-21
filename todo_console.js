@@ -12,13 +12,36 @@ class TodoConsoleApp {
         return prnDt
     }
 
-    entrance(){}
+    entrance(){
+        while (true) {
+            
+            console.log("TODO LIST\n Press 1 to add...\n Press 2 to update\n Press 3 to delete\n Press 4 to exit");
+            let choice = prompt("Enter..: ")
+            switch (choice) {
+                case 1:
+                    this.addItem()
+                    break;
+                case 2:
+                    this.updateItem(index)
+                    break;
+                case 3:
+                    this.deleteItem(index)
+                    break;
+                case 4:
+                    this.exist()
+                    break;
+            
+                default:
+                    break;
+            }
+        }
+    }
     
     addItem(){
         console.log("Add your daily activity: ");
         let input = prompt()
         this.dataBase.push(input)
-        this.display()
+        this.entrance()
     }
     
     updateItem(index){
@@ -33,7 +56,7 @@ class TodoConsoleApp {
             console.log(this.dataBase[index]);
             let input = prompt("Update to..: ")
             this.dataBase[index] = input
-            this.display()
+            this.entrance()
         }
     }
     
@@ -46,7 +69,7 @@ class TodoConsoleApp {
             console.log("Wrong index");
         } else{
             this.dataBase.splice(index, 1);
-            this.display()
+            this.entrance()
         }
     }
 
@@ -61,4 +84,4 @@ class TodoConsoleApp {
 }
 
 todo = new TodoConsoleApp();
-todo.updateItem(1)
+todo.entrance(1)
