@@ -22,10 +22,10 @@ class TodoConsoleApp {
                     this.addItem()
                     break;
                 case 2:
-                    this.updateItem(index)
+                    this.updateItem()
                     break;
                 case 3:
-                    this.deleteItem(index)
+                    this.deleteItem()
                     break;
                 case 4:
                     this.exist()
