@@ -77,13 +77,22 @@ class TodoConsoleApp {
             console.log(`| ${index} | ${element}`);
         });
         console.log("--------------------");
+        this.entrance()
     }
 
     exist(input){
         if(input == 4)
         return;
     }
+
+    storage(){
+        this.dataBase.forEach((element,index) => {
+            console.log(`| ${index} | ${element}`);
+        });
+        let userInput = parseInt(prompt("Select an index:..: "))
+        return userInput
+    }
 }
 
 todo = new TodoConsoleApp();
-todo.entrance(1)
+console.log(todo.storage())
