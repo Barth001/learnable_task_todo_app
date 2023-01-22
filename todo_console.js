@@ -12,28 +12,25 @@ class TodoConsoleApp {
         return prnDt
     }
 
-    entrance(){
-        while (true) {
-            
-            console.log("TODO LIST\n Press 1 to add...\n Press 2 to update\n Press 3 to delete\n Press 4 to exit");
-            let choice = prompt("Enter..: ")
-            switch (choice) {
-                case 1:
-                    this.addItem()
-                    break;
-                case 2:
-                    this.updateItem()
-                    break;
-                case 3:
-                    this.deleteItem()
-                    break;
-                case 4:
-                    this.exist()
-                    break;
-            
-                default:
-                    break;
-            }
+    entrance(){   
+        console.log("TODO LIST\n Press 1 to add...\n Press 2 to update\n Press 3 to delete\n Press 4 to exit");
+        let choice = parseInt(prompt("Enter..: "))
+        switch (choice) {
+            case 1:
+                this.addItem()
+                break;
+            case 2:
+                this.updateItem()
+                break;
+            case 3:
+                this.deleteItem()
+                break;
+            case 4:
+                this.exist(choice)
+                break;
+        
+            default:
+                break;
         }
     }
     
@@ -80,6 +77,11 @@ class TodoConsoleApp {
             console.log(`| ${index} | ${element}`);
         });
         console.log("--------------------");
+    }
+
+    exist(input){
+        if(input == 4)
+        return;
     }
 }
 
